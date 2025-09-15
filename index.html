@@ -1,97 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
-    <title>Project Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Mobile Menu Toggle Button -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+  <!-- Mobile Menu Toggle -->
+  <button id="mobileMenuToggle" class="sm:hidden fixed top-4 left-4 bg-gray-800 text-white p-3 rounded z-50">☰</button>
 
-    <!-- Mobile Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
+  <!-- Mobile Overlay -->
+  <div id="mobileOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
 
-    <div class="container">
-      <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-          <h1>My Projects</h1>
-          <p>Explore my development portfolio</p>
-        </div>
-        <div class="project-list">
-          <a
-            href="#"
-            class="project-item"
-            data-url="https://github.com/samrudhitibile27/html/settings/pages"
-            data-title="Landing Page"
-          >
-            <div class="project-title">Landing Page</div>
+  <div class="flex h-screen">
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="bg-gray-900 text-white w-64 flex-shrink-0 flex flex-col transform sm:translate-x-0 -translate-x-full transition-transform duration-300 z-50">
+      <div class="p-6 border-b border-gray-700">
+        <h1 class="text-2xl font-bold mb-1">My Projects</h1>
+        <p class="text-gray-400 text-sm">Explore my development portfolio</p>
+      </div>
+
+      <div class="flex-1 overflow-y-auto">
+        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://github.com/samrudhitibile27/html/settings/pages" data-title="Landing Page">
+          <div class="font-bold">Landing Page</div>
+        </a>
+        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://samrudhitibile27.github.io/webpeges/" data-title="Photo Gallery">
+          <div class="font-bold">Photo Gallery</div>
+        </a>
+        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://samrudhitibile27.github.io/Tailwind/" data-title="Landing Page Tailwind">
+          <div class="font-bold">Landing Page Tailwind</div>
+          <div class="text-gray-400 text-sm">Landing Page using Tailwind CSS</div>
+        </a>
+        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://samrudhitibile04.github.io/Tailwind1/" data-title="Blogify">
+          <div class="font-bold">Tailwind CSS Landing-Page</div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 overflow-y-auto ml-0 sm:ml-64">
+      <!-- Welcome Screen -->
+      <div id="welcome" class="text-center bg-white rounded-xl shadow-lg p-10">
+        <div class="text-5xl mb-4">🚀</div>
+        <h1 class="text-3xl font-bold mb-2">Welcome to My Projects</h1>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Discover a collection of innovative web applications and interactive experiences. Select a project from the sidebar to explore live demos and detailed implementations.
+        </p>
+      </div>
+
+      <!-- Project Content -->
+      <div id="project-content" class="hidden bg-white rounded-xl shadow-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h2 id="project-title" class="text-2xl font-bold">Project Title</h2>
+          <a href="#" id="external-link" target="_blank" class="text-blue-600 font-semibold flex items-center gap-1">
+            Open in New Tab ↗
           </a>
-          <a
-            href="#"
-            class="project-item"
-            data-url="https://samrudhitibile27.github.io/webpeges/"
-            data-title="Photo Gallery "
-          >
-            <div class="project-title">Photo Gallery </div>
-          </a>
-
-          <a
-            href="#"
-            class="project-item"
-            data-url="https://samrudhitibile27.github.io/Tailwind/
-            data-title="Landing-Page"
-          >
-            <div class="project-title">Landing-Page</div>
-            <div class="project-description">
-              Landing Page using tailwind CSS
-            </div>
-          </a>
-          <a
-            href="#"
-            class="project-item"
-            data-url="https://samrudhitibile04.github.io/Tailwind1/"
-            data-title="Blogify"
-          >
-            <div class="project-title">Tailwind CSS Landing-Page</div>
-          </a>
         </div>
-      </nav>
+        <iframe id="project-frame" class="w-full h-[500px] border rounded-md"></iframe>
+      </div>
+    </main>
+  </div>
 
-      <main class="main-content">
-        <div class="welcome-screen" id="welcome">
-          <div class="welcome-icon">🚀</div>
-          <h1 class="welcome-title">Welcome to My Projects</h1>
-          <p class="welcome-subtitle">
-            Discover a collection of innovative web applications and interactive
-            experiences. Select a project from the sidebar to explore live demos
-            and detailed implementations.
-          </p>
-
-          <div class="stats"></div>
-        </div>
-
-        <div id="project-content" style="display: none">
-          <div class="frame-header">
-            <h2 class="frame-title" id="project-title">Project Title</h2>
-            <a
-              href="#"
-              class="external-link"
-              id="external-link"
-              target="_blank"
-            >
-              <span>Open in New Tab</span>
-              <span>↗</span>
-            </a>
-          </div>
-          <iframe class="project-frame" id="project-frame" src=""></iframe>
-        </div>
-      </main>
-    </div>
-  </body>
   <script src="script.js"></script>
+</body>
 </html>
