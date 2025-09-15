@@ -6,10 +6,10 @@
   <title>Project Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800">
 
   <!-- Mobile Menu Toggle -->
-  <button id="mobileMenuToggle" class="sm:hidden fixed top-4 left-4 bg-gray-800 text-white p-3 rounded z-50">☰</button>
+  <button id="mobileMenuToggle" class="sm:hidden fixed top-4 left-4 bg-indigo-700 text-white p-3 rounded shadow z-50">☰</button>
 
   <!-- Mobile Overlay -->
   <div id="mobileOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
@@ -17,24 +17,24 @@
   <div class="flex h-screen">
 
     <!-- Sidebar -->
-    <nav id="sidebar" class="bg-gray-900 text-white w-64 flex-shrink-0 flex flex-col transform sm:translate-x-0 -translate-x-full transition-transform duration-300 z-50">
-      <div class="p-6 border-b border-gray-700">
+    <nav id="sidebar" class="bg-indigo-800 text-yellow-200 w-64 flex-shrink-0 flex flex-col transform sm:translate-x-0 -translate-x-full transition-transform duration-300 z-50">
+      <div class="p-6 border-b border-indigo-600">
         <h1 class="text-2xl font-bold mb-1">My Projects</h1>
-        <p class="text-gray-400 text-sm">Explore my development portfolio</p>
+        <p class="text-yellow-300 text-sm">Explore my development portfolio</p>
       </div>
 
       <div class="flex-1 overflow-y-auto">
-        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://github.com/samrudhitibile27/html/settings/pages" data-title="Landing Page">
+        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://github.com/samrudhitibile27/html/settings/pages" data-title="Landing Page">
           <div class="font-bold">Landing Page</div>
         </a>
-        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://samrudhitibile27.github.io/webpeges/" data-title="Photo Gallery">
+        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://samrudhitibile27.github.io/webpeges/" data-title="Photo Gallery">
           <div class="font-bold">Photo Gallery</div>
         </a>
-        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://samrudhitibile27.github.io/Tailwind/" data-title="Landing Page Tailwind">
+        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://samrudhitibile27.github.io/Tailwind/" data-title="Landing Page Tailwind">
           <div class="font-bold">Landing Page Tailwind</div>
-          <div class="text-gray-400 text-sm">Landing Page using Tailwind CSS</div>
+          <div class="text-yellow-300 text-sm">Landing Page using Tailwind CSS</div>
         </a>
-        <a href="#" class="block px-6 py-4 border-b border-gray-700 hover:bg-gray-800 project-item" data-url="https://samrudhitibile04.github.io/Tailwind1/" data-title="landing Page">
+        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://samrudhitibile04.github.io/Tailwind1/" data-title="Landing Page 2">
           <div class="font-bold">Tailwind CSS Landing-Page</div>
         </a>
       </div>
@@ -43,27 +43,70 @@
     <!-- Main Content -->
     <main class="flex-1 p-8 overflow-y-auto ml-0 sm:ml-64">
       <!-- Welcome Screen -->
-      <div id="welcome" class="text-center bg-white rounded-xl shadow-lg p-10">
-        <div class="text-5xl mb-4">🚀</div>
+      <div id="welcome" class="text-center bg-gradient-to-r from-yellow-100 to-yellow-200 rounded-xl shadow-2xl p-10">
+        <div class="text-5xl mb-4 animate-bounce">🚀</div>
         <h1 class="text-3xl font-bold mb-2">Welcome to My Projects</h1>
-        <p class="text-gray-600 max-w-xl mx-auto">
+        <p class="text-gray-700 max-w-xl mx-auto">
           Discover a collection of innovative web applications and interactive experiences. Select a project from the sidebar to explore live demos and detailed implementations.
         </p>
       </div>
 
       <!-- Project Content -->
-      <div id="project-content" class="hidden bg-white rounded-xl shadow-lg p-6">
+      <div id="project-content" class="hidden bg-white rounded-xl shadow-2xl p-6 mt-6">
         <div class="flex justify-between items-center mb-4">
           <h2 id="project-title" class="text-2xl font-bold">Project Title</h2>
-          <a href="#" id="external-link" target="_blank" class="text-blue-600 font-semibold flex items-center gap-1">
+          <a href="#" id="external-link" target="_blank" class="text-indigo-700 font-semibold flex items-center gap-1">
             Open in New Tab ↗
           </a>
         </div>
-        <iframe id="project-frame" class="w-full h-[500px] border rounded-md"></iframe>
+        <iframe id="project-frame" class="w-full h-[500px] border-2 border-gray-300 rounded-md"></iframe>
       </div>
     </main>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobileOverlay');
+
+    mobileToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    });
+
+    // Project iframe loader
+    const projects = document.querySelectorAll('.project-item');
+    const projectContent = document.getElementById('project-content');
+    const welcomeScreen = document.getElementById('welcome');
+    const projectFrame = document.getElementById('project-frame');
+    const projectTitle = document.getElementById('project-title');
+    const externalLink = document.getElementById('external-link');
+
+    projects.forEach(project => {
+      project.addEventListener('click', () => {
+        const url = project.dataset.url;
+        const title = project.dataset.title;
+
+        projectFrame.src = url;
+        projectTitle.textContent = title;
+        externalLink.href = url;
+
+        welcomeScreen.style.display = 'none';
+        projectContent.style.display = 'block';
+
+        // Close sidebar on mobile
+        if(window.innerWidth < 640){
+          sidebar.classList.add('-translate-x-full');
+          overlay.classList.add('hidden');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
