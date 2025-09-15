@@ -5,47 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800">
-
-  <!-- Mobile Menu Toggle -->
-  <button id="mobileMenuToggle" class="sm:hidden fixed top-4 left-4 bg-indigo-700 text-white p-3 rounded shadow z-50">☰</button>
-
-  <!-- Mobile Overlay -->
-  <div id="mobileOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
-
-  <div class="flex h-screen">
-
-    <!-- Sidebar -->
-    <nav id="sidebar" class="bg-indigo-800 text-yellow-200 w-64 flex-shrink-0 flex flex-col transform sm:translate-x-0 -translate-x-full transition-transform duration-300 z-50">
-      <div class="p-6 border-b border-indigo-600">
-        <h1 class="text-2xl font-bold mb-1">My Projects</h1>
-        <p class="text-yellow-300 text-sm">Explore my development portfolio</p>
-      </div>
-
-      <div class="flex-1 overflow-y-auto">
-        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://samrudhitibile27.github.io/html/" data-title="Landing Page">
-          <div class="font-bold">Landing Page</div>
-        </a>
-        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://samrudhitibile27.github.io/webpeges/" data-title="Photo Gallery">
-          <div class="font-bold">Photo Gallery</div>https://samrudhitibile27.github.io/html/
-        </a>
-        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://samrudhitibile27.github.io/Tailwind/" data-title="Landing Page Tailwind">
-          <div class="font-bold">Landing Page Tailwind</div>
-          <div class="text-yellow-300 text-sm">Landing Page using Tailwind CSS</div>
-        </a>
-        <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-700 project-item" data-url="https://samrudhitibile04.github.io/Tailwind1/" data-title="Landing Page 2">
-          <div class="font-bold">Tailwind CSS Landing-Page</div>
-        </a>
-      </div><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Optional: fade-in animation */
+    /* Optional fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px);}
       to { opacity: 1; transform: translateY(0);}
@@ -53,7 +14,7 @@
     .animate-fadeIn { animation: fadeIn 1s ease-out; }
   </style>
 </head>
-<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans">
 
   <!-- Mobile Menu Toggle -->
   <button id="mobileMenuToggle" class="sm:hidden fixed top-4 left-4 bg-indigo-600 text-white p-3 rounded shadow z-50">☰</button>
@@ -67,9 +28,8 @@
     <nav id="sidebar" class="bg-gradient-to-b from-indigo-700 to-indigo-900 text-white w-64 flex-shrink-0 flex flex-col transform sm:translate-x-0 -translate-x-full transition-transform duration-300 z-50">
       <div class="p-6 border-b border-indigo-600">
         <h1 class="text-2xl font-bold mb-1">My Projects</h1>
-        <p class="text-indigo-300 text-sm">Explore my development portfolio</p>
+        <p class="text-indigo-300 text-sm">Explore my portfolio</p>
       </div>
-
       <div class="flex-1 overflow-y-auto">
         <a href="#" class="block px-6 py-4 border-b border-indigo-600 hover:bg-indigo-600 project-item" data-url="https://samrudhitibile27.github.io/html/" data-title="Landing Page">
           <div class="font-bold">Landing Page</div>
@@ -95,7 +55,7 @@
         <div class="text-6xl mb-4 animate-bounce">🚀</div>
         <h1 class="text-4xl font-extrabold mb-2">Welcome to My Projects</h1>
         <p class="text-gray-700 max-w-2xl mx-auto text-lg">
-          Discover a collection of innovative web applications and interactive experiences. Select a project from the sidebar to explore live demos and detailed implementations.
+          Discover a collection of web applications and interactive experiences. Select a project from the sidebar to explore live demos.
         </p>
       </div>
 
@@ -110,32 +70,6 @@
         <iframe id="project-frame" class="w-full h-[500px] border-2 border-gray-300 rounded-xl shadow-lg"></iframe>
       </div>
 
-    </main>
-  </div>
-
-    </nav>
-
-    <!-- Main Content -->
-    <main class="flex-1 p-8 overflow-y-auto ml-0 sm:ml-64">
-      <!-- Welcome Screen -->
-      <div id="welcome" class="text-center bg-gradient-to-r from-yellow-100 to-yellow-200 rounded-xl shadow-2xl p-10">
-        <div class="text-5xl mb-4 animate-bounce">🚀</div>
-        <h1 class="text-3xl font-bold mb-2">Welcome to My Projects</h1>
-        <p class="text-gray-700 max-w-xl mx-auto">
-          Discover a collection of innovative web applications and interactive experiences. Select a project from the sidebar to explore live demos and detailed implementations.
-        </p>
-      </div>
-
-      <!-- Project Content -->
-      <div id="project-content" class="hidden bg-white rounded-xl shadow-2xl p-6 mt-6">
-        <div class="flex justify-between items-center mb-4">
-          <h2 id="project-title" class="text-2xl font-bold">Project Title</h2>
-          <a href="#" id="external-link" target="_blank" class="text-indigo-700 font-semibold flex items-center gap-1">
-            Open in New Tab ↗
-          </a>
-        </div>
-        <iframe id="project-frame" class="w-full h-[500px] border-2 border-gray-300 rounded-md"></iframe>
-      </div>
     </main>
   </div>
 
@@ -183,5 +117,6 @@
       });
     });
   </script>
+
 </body>
 </html>
